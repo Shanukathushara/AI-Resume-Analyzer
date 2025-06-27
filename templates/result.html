@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2>Match Score: {{ score }}%</h2>
+    <div class="keywords">
+        <h3>✅ Matched Keywords:</h3>
+        {% for word in matched %}
+            <span class="matched">{{ word }}</span>
+        {% endfor %}
+    </div>
+    <div class="keywords">
+        <h3>❌ Missing Keywords (Consider Adding):</h3>
+        {% for word in missing %}
+            <span class="missing">{{ word }}</span>
+        {% endfor %}
+    </div>
+    <br>
+    <a href="/">🔁 Try Again</a>
+    <h3>Your Resume Text</h3>
+<pre style="background:#f4f4f4; padding:10px; border-radius:8px;">{{ resume_text }}</pre>
+
+</body>
+</html>
